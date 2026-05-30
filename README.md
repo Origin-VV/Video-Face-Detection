@@ -9,7 +9,7 @@
 ### 1. 安全用户认证系统 (`database.py` / `login_window.py`)
 * **加盐密码安全策略**：系统拒绝明文存储，全量用户信息采用 SHA-256 算法加盐哈希保存，并通过 `hmac.compare_digest` 机制抵抗时间差攻击，确保本地数据库的安全。
 * **多账户相互隔离**：支持多用户注册与独立登录，默认内置管理员凭证（`admin` / `123456`），实现开箱即用。
-* <img width="400" height="250" alt="登录界面" src="https://github.com/user-attachments/assets/2a0a7a0a-225a-4774-83e9-cc1235beb517" />
+* <img width="300" height="200" alt="登录界面" src="https://github.com/user-attachments/assets/2a0a7a0a-225a-4774-83e9-cc1235beb517" />
 
 
 ### 2. 深度多目标追踪与视频分析引擎 (`video_page.py` / `video_detector.py`)
@@ -20,10 +20,13 @@
 ### 3. 双面板静态图片检测台 (`image_page.py`)
 * **直观对比架构**：采用“原始图像面板”与“结果推理面板”左右对称的现代化卡片设计。
 * **元数据全息呈现**：呈现图片的分辨率尺寸、检测到的人脸精确数量、数据库写入状态等核心指标。
+* <img width="1668" height="1285" alt="报警" src="https://github.com/user-attachments/assets/74dc72cd-4923-418b-8f09-90eed02a0eed" />
+
 
 ### 4. 摄像头实时监控与安全防侵入警报 (`camera_page.py`)
 * **高帧率平滑采集**：支持 DirectShow 兼容模式，自适应适配本地默认或外接 USB 摄像头，在画面的捕获同时提供动态 FPS（每秒帧率）计算和分辨率监测看板。
 * **高低音交替警报与防冗余机制**：系统内置可动态开关的警报中心。一旦在监控中发现人脸且警报开启，将立即调用 `winsound` 触发一组高低音交替长鸣的蜂鸣器器音（`1000Hz -> 1400Hz -> 1000Hz`）。同时设置了 **3秒强制冷却时间**，兼顾了警示的高效性与场景的防疲劳设计。
+* <img width="500" height="300" alt="报警" src="https://github.com/user-attachments/assets/74dc72cd-4923-418b-8f09-90eed02a0eed" />
 
 ### 5. 交互级联式历史记录中心 (`history_page.py` / `history_dialog.py`)
 * **双模态数据精细化管理**：划分“视频记录”与“图片记录”双重审计表，完整留存了操作用户、原文件路径、模型权重、处理时间等数据链路。
