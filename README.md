@@ -9,7 +9,7 @@
 ### 1. 安全用户认证系统 (`database.py` / `login_window.py`)
 * **加盐密码安全策略**：系统拒绝明文存储，全量用户信息采用 SHA-256 算法加盐哈希保存，并通过 `hmac.compare_digest` 机制抵抗时间差攻击，确保本地数据库的安全。
 * **多账户相互隔离**：支持多用户注册与独立登录，默认内置管理员凭证（`admin` / `123456`），实现开箱即用。
-* <img width="964" height="687" alt="登录界面" src="https://github.com/user-attachments/assets/2a0a7a0a-225a-4774-83e9-cc1235beb517" />
+* <img width="400" height="250" alt="登录界面" src="https://github.com/user-attachments/assets/2a0a7a0a-225a-4774-83e9-cc1235beb517" />
 
 
 ### 2. 深度多目标追踪与视频分析引擎 (`video_page.py` / `video_detector.py`)
