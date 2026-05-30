@@ -16,25 +16,29 @@
 * **YOLOv11 与 ByteTrack 深度融合**：打破传统单帧检测局限，系统集成了 ByteTrack 高级追踪算法（解析自 `config/bytetrack.yaml`），在视频分析时为每个人脸分配唯一的 ID 链路。
 * **高阶数据看板指标**：推理结束后，系统不仅输出标注视频，还将实时统计出核心指标：**出现过的人脸独立总数 (Unique Track Count)** 以及 **画面同框人脸最大并发数 (Max Active Track Count)**。
 * **流式异步处理与导出**：配备实时的检测进度条与已处理/总帧数看板，检测结果通过 `MJPG` 编码器动态写入本地，支持无损复制与自主导出。
+* <img width="600" height="430" alt="屏幕截图 2026-04-27 224349" src="https://github.com/user-attachments/assets/d3b87cfc-4191-434c-835e-8ac7d208b8dc" />
+
 
 ### 3. 双面板静态图片检测台 (`image_page.py`)
 * **直观对比架构**：采用“原始图像面板”与“结果推理面板”左右对称的现代化卡片设计。
 * **元数据全息呈现**：呈现图片的分辨率尺寸、检测到的人脸精确数量、数据库写入状态等核心指标。
-* <img width="600" height="450" alt="图片检测结果2" src="https://github.com/user-attachments/assets/1faf2f9d-73e1-4a69-9827-280157b8d03c" />
+* <img width="600" height="430" alt="图片检测结果2" src="https://github.com/user-attachments/assets/1faf2f9d-73e1-4a69-9827-280157b8d03c" />
 
 ### 4. 摄像头实时监控与安全防侵入警报 (`camera_page.py`)
 * **高帧率平滑采集**：支持 DirectShow 兼容模式，自适应适配本地默认或外接 USB 摄像头，在画面的捕获同时提供动态 FPS（每秒帧率）计算和分辨率监测看板。
 * **高低音交替警报与防冗余机制**：系统内置可动态开关的警报中心。一旦在监控中发现人脸且警报开启，将立即调用 `winsound` 触发一组高低音交替长鸣的蜂鸣器器音（`1000Hz -> 1400Hz -> 1000Hz`）。同时设置了 **3秒强制冷却时间**，兼顾了警示的高效性与场景的防疲劳设计。
-* <img width="600" height="450" alt="报警" src="https://github.com/user-attachments/assets/74dc72cd-4923-418b-8f09-90eed02a0eed" />
+* <img width="600" height="430" alt="报警" src="https://github.com/user-attachments/assets/74dc72cd-4923-418b-8f09-90eed02a0eed" />
 
 ### 5. 交互级联式历史记录中心 (`history_page.py` / `history_dialog.py`)
 * **双模态数据精细化管理**：划分“视频记录”与“图片记录”双重审计表，完整留存了操作用户、原文件路径、模型权重、处理时间等数据链路。
 * **全局与单人视图切换**：提供“只看当前用户”一键过滤功能，兼顾隐私性与审计全局性。
 * **时间轴拖拽播放器弹窗**：双击历史视频记录可弹出专属的交互式交互播放弹窗，支持通过 **时间轴进度条 (Slider)** 自由拖动、定点跳转及回溯历史推理视频。
 * **文件级联清理机制**：勾选删除视频历史记录时，系统会自动将磁盘上对应的检测结果视频一并强制解除占用并销毁（`unlink`），防止对本地存储造成长期负担。
+* <img width="600" height="430" alt="历史记录" src="https://github.com/user-attachments/assets/a79adcb5-dc1c-4a17-922d-65319a68f565" />
+
 
 ### 6. 数据管线工具：WIDER FACE 全自动转换管线 (`prepare_widerface.py`)
-* **一键标准化数据集清洗**：针对学术界常用的 WIDER FACE 复杂多行标注，项目原生自带了全自动 YOLO 转换脚本。
+* **一键标准化数据集清洗**：针对常用的 WIDER FACE 复杂多行标注，项目原生自带了全自动 YOLO 转换脚本。
 * **智能归一化处理**：自动读取原始边界框，执行坐标越界裁剪，自适应结合图片高宽将其转换为 YOLO 规范标准的 `0 center_x center_y width height` 归一化文本标签，方便模型在敏捷开发中快速重训。
 
 ---
@@ -48,7 +52,7 @@
 
 ---
 
-## 规范化项目目录结构
+## 项目目录结构
 
 ```text
 .
