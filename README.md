@@ -79,6 +79,7 @@
 ├── models/
 │   └── widerface_yolo11s/        # 推荐模型权重存放路径 (支持 best.pt 自动检索)
 ├── outputs/                      # 检测结果视频/图片的默认输出缓存区
-├── prepare_widerface.py          # WIDER FACE 原始标注到 YOLO 格式的自动转换脚本
+├── tools/
+│   └── prepare_widerface.py      # WIDER FACE 原始标注到 YOLO 格式的自动转换脚本
 ├── run.py                        # 项目全局启动主入口
 └── requirements.txt              # 生产环境依赖包清单
